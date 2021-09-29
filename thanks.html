@@ -8,44 +8,11 @@
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-<link rel="stylesheet" href="stylepag.css">
+	<!-- <link rel="stylesheet" href="stylepag.css"> -->
 </head>
 <body>
-	<div class="container">
-		<div class="row">
-			<div class="col-xs-12 visible-xs-inline-block text-center col-hidden-sm">
-				<img src="./sevenpay.png" width="100%">
-			</div>
-		</div>
-		<div class="row">
-			<div class="col-sm-6 col-xs-12 text-center">
-				<img id="checkout" src="./CHECKOUT2.png" width="80%">
-			</div>
-			<div class="col-sm-6 col-xs-12 text-center">
-				<br><br><br><br>
-				<img src="./sevenpay.png" class="logo" width="50%">
-				<br><br>
-				<img src="./TEX.png" width="100%">
-				<br><br><br>
-				<div class="icon">
-					<i class="fa fa-angle-down"></i>
-				</div>
-				<div class="icon">
-					<i class="fa fa-angle-down"></i>
-				</div>
-				<div class="icon">
-					<i class="fa fa-angle-down"></i>
-				</div>
-				<br>
-				<input type="email" id="email" class="form-control" placeholder="E-mail">
-				<br><br>
-				<img src="./botão.png" width="50%" onclick="capturarLead()">
-			</div>
-		</div>
-	</div>
+	<img src="./thanks.jpeg" width="100%">
 </body>
-
-<script src="./script.js"></script>
 
 <!-- Facebook Pixel Code -->
 <script src="./pixel.js"></script>
@@ -59,6 +26,9 @@ t.src=v;s=b.getElementsByTagName(e)[0];
 s.parentNode.insertBefore(t,s)}(window, document,'script',
 'https://connect.facebook.net/en_US/fbevents.js');
 fbq('init', pixel_Global);
+fbq('track', 'lead',
+	localStorage.emailLead ? { "email" : localStorage.getItem('emailLead') } : {}
+);
 </script>
 <script>
 $("body").append(''
@@ -68,5 +38,7 @@ $("body").append(''
 );
 </script>
 <!-- End Facebook Pixel Code -->
+
+<!-- localStorage.setItem('emailLead', email); -->
 
 </html>
